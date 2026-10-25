@@ -1,3 +1,16 @@
+// SESSION 8 SCAFFOLD
+// The validated tracker works in memory. Connect it to task-store.ts.
+
+// TODO 1: Open task-store.ts and complete loadTasks and saveTasks.
+
+// TODO 2: Import both storage functions here.
+
+// TODO 3: Await loadTasks() before creating the TaskTracker.
+
+// TODO 4: Await saveTasks(...) after a successful add or complete command.
+
+// TODO 5: Catch unexpected file errors, show their message, and close cleanly.
+
 import { createInterface } from "node:readline/promises";
 import { stdin as input, stdout as output } from "node:process";
 import { TaskTracker, type Priority } from "./task-tracker.js";

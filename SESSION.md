@@ -1,15 +1,25 @@
-# Session 7 End
+# Session 8 Start
 
-## What this branch contains
+## Build today
 
-This is the completed reference implementation for Session 7: a resilient command-line app with validated input.
+A persistent task tracker that loads tasks from `tasks.json` and saves every meaningful change.
 
-## Review the change
+## Main ideas
 
-```bash
-npm run check
-npm start
-git diff session-07-start..session-07-end
-```
+- file input and output
+- JSON serialization
+- promises and `await`
+- `try` and `catch`
+- separating storage from application logic
 
-Use the diff to discuss how each scaffold comment became working code. Session 8 begins on `session-08-start`.
+## Work in small steps
+
+1. Create `task-store.ts` with `loadTasks` and `saveTasks`.
+2. Start the tracker with loaded tasks.
+3. Save after adding or completing a task.
+4. Treat a missing file as an empty first run.
+5. Report other file errors without losing the explanation.
+
+## Completion checkpoint
+
+Tasks survive an application restart, and the learner can trace the load and save operations from the CLI to the file.
