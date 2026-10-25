@@ -1,60 +1,31 @@
-// SESSION 4 SCAFFOLD
-// The functions work, but related task values still live in separate arrays.
+type Priority = "low" | "medium" | "high";
 
-// TODO 1: Define a Priority union type with low, medium, and high values.
-
-// TODO 2: Define a Task interface with id, title, estimatedMinutes,
-// completed, and priority properties.
-
-// TODO 3: Replace the three parallel arrays with one Task[] array.
-
-// TODO 4: Use filter to create an openTasks array.
-
-// TODO 5: Use reduce to calculate remaining minutes from openTasks.
-
-// TODO 6: Add a filtered count of open high-priority tasks.
-
-function statusMarker(completed: boolean): string {
-  return completed ? "x" : " ";
+interface Task {
+  id: number;
+  title: string;
+  estimatedMinutes: number;
+  completed: boolean;
+  priority: Priority;
 }
 
-function remainingMinutes(
-  estimates: number[],
-  completionStatuses: boolean[],
-): number {
-  let total = 0;
+const tasks: Task[] = [
+  { id: 1, title: "Prepare meeting notes", estimatedMinutes: 30, completed: false, priority: "high" },
+  { id: 2, title: "Reply to project email", estimatedMinutes: 15, completed: true, priority: "medium" },
+  { id: 3, title: "Review weekly metrics", estimatedMinutes: 45, completed: false, priority: "high" },
+];
 
-  for (let index = 0; index < estimates.length; index += 1) {
-    if (!completionStatuses[index]) {
-      total += estimates[index];
-    }
-  }
+const openTasks = tasks.filter((task) => !task.completed);
+const remainingMinutes = openTasks.reduce(
+  (total, task) => total + task.estimatedMinutes,
+  0,
+);
 
-  return total;
+for (const task of openTasks) {
+  console.log(`#${task.id} [${task.priority}] ${task.title}`);
 }
 
-function formatTask(title: string, minutes: number, completed: boolean): string {
-  return `[${statusMarker(completed)}] ${title} (${minutes} min)`;
-}
-
-function printPlan(
-  titles: string[],
-  estimates: number[],
-  completionStatuses: boolean[],
-): void {
-  console.log("Today's Task Plan");
-
-  for (let index = 0; index < titles.length; index += 1) {
-    console.log(formatTask(titles[index], estimates[index], completionStatuses[index]));
-  }
-
-  console.log(
-    `Remaining time: ${remainingMinutes(estimates, completionStatuses)} minutes`,
-  );
-}
-
-const taskTitles = ["Prepare meeting notes", "Reply to project email", "Review weekly metrics"];
-const estimates = [30, 15, 45];
-const completionStatuses = [false, true, false];
-
-printPlan(taskTitles, estimates, completionStatuses);
+console.log(`Open tasks: ${openTasks.length}`);
+console.log(`Remaining time: ${remainingMinutes} minutes`);
+console.log(
+  `High-priority tasks: ${openTasks.filter((task) => task.priority === "high").length}`,
+);

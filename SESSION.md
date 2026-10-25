@@ -1,25 +1,15 @@
-# Session 4 Start
+# Session 4 End
 
-## Build today
+## What this branch contains
 
-A typed task model that keeps each task's related information together and supports filtered reports.
+This is the completed reference implementation for Session 4: typed task objects with filtered reports.
 
-## Main ideas
+## Review the change
 
-- object properties and dot notation
-- interfaces
-- union types
-- arrays of objects
-- `filter`, `map`, and `reduce`
+```bash
+npm run check
+npm start
+git diff session-04-start..session-04-end
+```
 
-## Work in small steps
-
-1. Define the shape of one `Task`.
-2. Replace parallel arrays with an array of task objects.
-3. Add identifiers and priorities.
-4. Produce an open-task list and a remaining-time total.
-5. Summarize high-priority work.
-
-## Completion checkpoint
-
-The application uses an interface as the source of truth and produces accurate reports from an array of task objects.
+Use the diff to discuss how each scaffold comment became working code. Session 5 begins on `session-05-start`.
