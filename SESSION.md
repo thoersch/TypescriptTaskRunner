@@ -1,25 +1,15 @@
-# Session 8 Start
+# Session 8 End
 
-## Build today
+## What this branch contains
 
-A persistent task tracker that loads tasks from `tasks.json` and saves every meaningful change.
+This is the completed reference implementation for Session 8: a persistent task tracker backed by a JSON file.
 
-## Main ideas
+## Review the change
 
-- file input and output
-- JSON serialization
-- promises and `await`
-- `try` and `catch`
-- separating storage from application logic
+```bash
+npm run check
+npm start
+git diff session-08-start..session-08-end
+```
 
-## Work in small steps
-
-1. Create `task-store.ts` with `loadTasks` and `saveTasks`.
-2. Start the tracker with loaded tasks.
-3. Save after adding or completing a task.
-4. Treat a missing file as an empty first run.
-5. Report other file errors without losing the explanation.
-
-## Completion checkpoint
-
-Tasks survive an application restart, and the learner can trace the load and save operations from the CLI to the file.
+Use the diff to discuss how each scaffold comment became working code. `course-complete` and `main` point to this finished application.

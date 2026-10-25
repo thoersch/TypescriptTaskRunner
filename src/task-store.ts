@@ -1,19 +1,28 @@
+import { readFile, writeFile } from "node:fs/promises";
 import type { Task } from "./task-tracker.js";
 
-// SESSION 8 SCAFFOLD
-// TODO 1: Import readFile and writeFile from node:fs/promises.
-
-// TODO 2: Create a URL for ../tasks.json relative to this module.
+const DATA_FILE = new URL("../tasks.json", import.meta.url);
 
 export async function loadTasks(): Promise<Task[]> {
-  // TODO 3: Read the file as UTF-8 text and parse its JSON.
-  // TODO 4: Return [] only when the file is missing; rethrow other errors.
-  return [];
+  try {
+    const text = await readFile(DATA_FILE, "utf8");
+    return JSON.parse(text) as Task[];
+  } catch (error) {
+    if (isMissingFileError(error)) {
+      return [];
+    }
+    throw error;
+  }
 }
 
 export async function saveTasks(tasks: Task[]): Promise<void> {
-  // TODO 5: Convert tasks to indented JSON and write the file.
-  void tasks;
+  await writeFile(DATA_FILE, JSON.stringify(tasks, null, 2) + "\n", "utf8");
 }
 
-// TODO 6: Add an isMissingFileError(error: unknown) type guard.
+function isMissingFileError(error: unknown): boolean {
+  return (
+    error instanceof Error &&
+    "code" in error &&
+    (error as NodeJS.ErrnoException).code === "ENOENT"
+  );
+}
