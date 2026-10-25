@@ -1,26 +1,15 @@
-# Session 1 Start
+# Session 1 End
 
-## Build today
+## What this branch contains
 
-A task summary that stores and displays a title, priority, time estimate, time worked, and completion status.
+This is the completed reference implementation for Session 1: a typed summary for one task.
 
-## Main ideas
+## Review the change
 
-- TypeScript statements and punctuation
-- `string`, `number`, and `boolean` values
-- `const` and `let` variables
-- arithmetic and comparison expressions
-- template strings and `console.log`
+```bash
+npm run check
+npm start
+git diff session-01-start..session-01-end
+```
 
-## Work in small steps
-
-1. Run the starter and identify code versus output.
-2. Create one variable for each piece of task information.
-3. Calculate the remaining minutes.
-4. Display a readable summary with template strings.
-5. Change the values and predict the new output before running.
-6. Create one deliberate type error and use `npm run check` to understand it.
-
-## Completion checkpoint
-
-The program displays a useful task summary, and you can explain the type and purpose of every value in it.
+Use the diff to discuss how each scaffold comment became working code. Session 2 begins on `session-02-start`.
