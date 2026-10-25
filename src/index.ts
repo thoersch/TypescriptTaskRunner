@@ -1,3 +1,19 @@
+// SESSION 6 SCAFFOLD
+// The class-based program below still runs. Turn it into an interactive loop.
+
+// TODO 1: Import createInterface from node:readline/promises and stdin/stdout.
+
+// TODO 2: Create a terminal interface and an empty TaskTracker.
+
+// TODO 3: Create an async run function with a while loop.
+
+// TODO 4: Ask for a command and use switch to handle add, list,
+// complete, summary, and quit.
+
+// TODO 5: Ask follow-up questions for add and complete.
+
+// TODO 6: Await run() and close the terminal in a finally block.
+
 import { TaskTracker, type Task } from "./task-tracker.js";
 
 const initialTasks: Task[] = [

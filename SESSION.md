@@ -1,15 +1,25 @@
-# Session 5 End
+# Session 6 Start
 
-## What this branch contains
+## Build today
 
-This is the completed reference implementation for Session 5: a modular TaskTracker class.
+An interactive task tracker with commands to add, list, complete, summarize, and quit.
 
-## Review the change
+## Main ideas
 
-```bash
-npm run check
-npm start
-git diff session-05-start..session-05-end
-```
+- terminal input with `readline`
+- command loops
+- `switch` statements
+- async functions and `await`
+- connecting user actions to class methods
 
-Use the diff to discuss how each scaffold comment became working code. Session 6 begins on `session-06-start`.
+## Work in small steps
+
+1. Show a menu and read one command.
+2. Keep asking until the user chooses quit.
+3. Connect list and summary commands.
+4. Ask follow-up questions for add and complete commands.
+5. Close the terminal cleanly.
+
+## Completion checkpoint
+
+A person can manage tasks through the terminal without editing source code.
