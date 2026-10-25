@@ -8,22 +8,57 @@ export interface Task {
   priority: Priority;
 }
 
-// SESSION 5 SCAFFOLD
 export class TaskTracker {
-  // TODO 1: Add a private Task[] field so this class owns its state.
+  private tasks: Task[];
 
   constructor(initialTasks: Task[] = []) {
-    // TODO 2: Copy initialTasks into the private field.
-    void initialTasks;
+    this.tasks = [...initialTasks];
   }
 
-  // TODO 3: Add addTask. Create an id, store the task, and return it.
+  addTask(title: string, estimatedMinutes: number, priority: Priority): Task {
+    const task: Task = {
+      id: this.nextId(),
+      title,
+      estimatedMinutes,
+      completed: false,
+      priority,
+    };
 
-  // TODO 4: Add completeTask. Return false when the id is unknown.
+    this.tasks.push(task);
+    return task;
+  }
 
-  // TODO 5: Add getOpenTasks and getAllTasks without exposing private state.
+  completeTask(id: number): boolean {
+    const task = this.tasks.find((candidate) => candidate.id === id);
 
-  // TODO 6: Add getSummary with openCount and remainingMinutes.
+    if (!task) {
+      return false;
+    }
 
-  // TODO 7: Add a private nextId helper.
+    task.completed = true;
+    return true;
+  }
+
+  getOpenTasks(): Task[] {
+    return this.tasks.filter((task) => !task.completed);
+  }
+
+  getAllTasks(): Task[] {
+    return this.tasks.map((task) => ({ ...task }));
+  }
+
+  getSummary(): { openCount: number; remainingMinutes: number } {
+    const openTasks = this.getOpenTasks();
+    return {
+      openCount: openTasks.length,
+      remainingMinutes: openTasks.reduce(
+        (total, task) => total + task.estimatedMinutes,
+        0,
+      ),
+    };
+  }
+
+  private nextId(): number {
+    return this.tasks.reduce((largest, task) => Math.max(largest, task.id), 0) + 1;
+  }
 }

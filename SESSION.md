@@ -1,25 +1,15 @@
-# Session 5 Start
+# Session 5 End
 
-## Build today
+## What this branch contains
 
-A `TaskTracker` class that owns the task list and exposes clear operations for adding, completing, listing, and summarizing work.
+This is the completed reference implementation for Session 5: a modular TaskTracker class.
 
-## Main ideas
+## Review the change
 
-- classes and instances
-- constructors
-- private state
-- public methods
-- modules, exports, and imports
+```bash
+npm run check
+npm start
+git diff session-05-start..session-05-end
+```
 
-## Work in small steps
-
-1. Move the `Task` types into `task-tracker.ts`.
-2. Create the class and pass initial tasks to its constructor.
-3. Add methods one at a time and run after each method.
-4. Keep display code in `index.ts`.
-5. Verify that callers cannot change private task state directly.
-
-## Completion checkpoint
-
-The application creates a tracker instance and uses its methods to add, complete, list, and summarize tasks.
+Use the diff to discuss how each scaffold comment became working code. Session 6 begins on `session-06-start`.
