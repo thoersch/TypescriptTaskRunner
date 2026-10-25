@@ -1,25 +1,15 @@
-# Session 6 Start
+# Session 6 End
 
-## Build today
+## What this branch contains
 
-An interactive task tracker with commands to add, list, complete, summarize, and quit.
+This is the completed reference implementation for Session 6: an interactive command-line task tracker.
 
-## Main ideas
+## Review the change
 
-- terminal input with `readline`
-- command loops
-- `switch` statements
-- async functions and `await`
-- connecting user actions to class methods
+```bash
+npm run check
+npm start
+git diff session-06-start..session-06-end
+```
 
-## Work in small steps
-
-1. Show a menu and read one command.
-2. Keep asking until the user chooses quit.
-3. Connect list and summary commands.
-4. Ask follow-up questions for add and complete commands.
-5. Close the terminal cleanly.
-
-## Completion checkpoint
-
-A person can manage tasks through the terminal without editing source code.
+Use the diff to discuss how each scaffold comment became working code. Session 7 begins on `session-07-start`.
