@@ -1,24 +1,54 @@
-// SESSION 7 SCAFFOLD
-// The command loop works. Add checks wherever text enters the application.
-
-// TODO 1: Create parsePositiveNumber(text) and return undefined for bad values.
-
-// TODO 2: Create parsePriority(text) and allow only low, medium, or high.
-
-// TODO 3: Move the add command into addTask() and reject a blank title.
-
-// TODO 4: Validate minutes and priority before calling tracker.addTask.
-
-// TODO 5: Move complete into completeTask() and require a whole-number id.
-
-// TODO 6: Keep the command loop running after every correctable mistake.
-
 import { createInterface } from "node:readline/promises";
 import { stdin as input, stdout as output } from "node:process";
-import { TaskTracker } from "./task-tracker.js";
+import { TaskTracker, type Priority } from "./task-tracker.js";
 
 const terminal = createInterface({ input, output });
 const tracker = new TaskTracker();
+
+function parsePositiveNumber(text: string): number | undefined {
+  const value = Number(text);
+  return Number.isFinite(value) && value > 0 ? value : undefined;
+}
+
+function parsePriority(text: string): Priority | undefined {
+  const value = text.trim().toLowerCase();
+  return value === "low" || value === "medium" || value === "high"
+    ? value
+    : undefined;
+}
+
+async function addTask(): Promise<void> {
+  const title = (await terminal.question("Task title: ")).trim();
+  if (!title) {
+    console.log("Enter a task title.");
+    return;
+  }
+
+  const minutes = parsePositiveNumber(await terminal.question("Estimated minutes: "));
+  if (minutes === undefined) {
+    console.log("Enter a number greater than zero.");
+    return;
+  }
+
+  const priority = parsePriority(await terminal.question("Priority (low, medium, high): "));
+  if (!priority) {
+    console.log("Choose low, medium, or high.");
+    return;
+  }
+
+  const task = tracker.addTask(title, minutes, priority);
+  console.log(`Added task #${task.id}.`);
+}
+
+async function completeTask(): Promise<void> {
+  const id = parsePositiveNumber(await terminal.question("Task id: "));
+  if (id === undefined || !Number.isInteger(id)) {
+    console.log("Enter a whole-number task id.");
+    return;
+  }
+
+  console.log(tracker.completeTask(id) ? "Task completed." : `Task #${id} was not found.`);
+}
 
 async function run(): Promise<void> {
   console.log("Task Tracker Commands: add, list, complete, summary, quit");
@@ -26,34 +56,20 @@ async function run(): Promise<void> {
   while (true) {
     const command = (await terminal.question("\nCommand: ")).trim().toLowerCase();
 
-    switch (command) {
-      case "add": {
-        const title = await terminal.question("Task title: ");
-        const minutes = Number(await terminal.question("Estimated minutes: "));
-        const priority = await terminal.question("Priority (low, medium, high): ");
-        const task = tracker.addTask(title, minutes, priority as "low" | "medium" | "high");
-        console.log(`Added task #${task.id}.`);
-        break;
+    if (command === "quit") return;
+    if (command === "add") await addTask();
+    else if (command === "complete") await completeTask();
+    else if (command === "list") {
+      const tasks = tracker.getOpenTasks();
+      if (tasks.length === 0) console.log("No open tasks.");
+      for (const task of tasks) {
+        console.log(`#${task.id} [${task.priority}] ${task.title} (${task.estimatedMinutes} min)`);
       }
-      case "list":
-        for (const task of tracker.getOpenTasks()) {
-          console.log(`#${task.id} [${task.priority}] ${task.title} (${task.estimatedMinutes} min)`);
-        }
-        break;
-      case "complete": {
-        const id = Number(await terminal.question("Task id: "));
-        console.log(tracker.completeTask(id) ? "Task completed." : "Task not found.");
-        break;
-      }
-      case "summary": {
-        const summary = tracker.getSummary();
-        console.log(`${summary.openCount} open task(s), ${summary.remainingMinutes} minutes remaining.`);
-        break;
-      }
-      case "quit":
-        return;
-      default:
-        console.log("Choose add, list, complete, summary, or quit.");
+    } else if (command === "summary") {
+      const summary = tracker.getSummary();
+      console.log(`${summary.openCount} open task(s), ${summary.remainingMinutes} minutes remaining.`);
+    } else {
+      console.log("Choose add, list, complete, summary, or quit.");
     }
   }
 }

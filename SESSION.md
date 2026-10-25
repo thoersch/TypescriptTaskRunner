@@ -1,25 +1,15 @@
-# Session 7 Start
+# Session 7 End
 
-## Build today
+## What this branch contains
 
-A resilient interactive application that rejects invalid commands and values with specific, useful messages.
+This is the completed reference implementation for Session 7: a resilient command-line app with validated input.
 
-## Main ideas
+## Review the change
 
-- validation at input boundaries
-- parsing text into numbers
-- guard clauses
-- optional return values
-- expected errors versus unexpected failures
+```bash
+npm run check
+npm start
+git diff session-07-start..session-07-end
+```
 
-## Work in small steps
-
-1. Reject blank task titles.
-2. Validate positive time estimates and known priorities.
-3. Handle unknown task identifiers.
-4. Handle unknown commands without exiting.
-5. Test normal, boundary, and unexpected inputs.
-
-## Completion checkpoint
-
-The application remains usable after bad input and explains exactly what the person should correct.
+Use the diff to discuss how each scaffold comment became working code. Session 8 begins on `session-08-start`.
