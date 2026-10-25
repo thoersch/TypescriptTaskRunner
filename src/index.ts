@@ -1,38 +1,44 @@
-// SESSION 3 SCAFFOLD
-// The plan works. The goal now is to move repeated jobs into named functions.
-
-// TODO 1: Extract the marker decision into statusMarker(completed: boolean).
-
-// TODO 2: Extract the total calculation into remainingMinutes(...).
-
-// TODO 3: Create formatTask(...) and return one formatted task line.
-
-// TODO 4: Create printPlan(...) and move the reporting loop into it.
-
-// TODO 5: Call each function with a second example and predict its return value.
-
-const taskTitles: string[] = [
-  "Prepare meeting notes",
-  "Reply to project email",
-  "Review weekly metrics",
-];
-const estimatedMinutes: number[] = [30, 15, 45];
-const completed: boolean[] = [false, true, false];
-
-let openTaskCount = 0;
-let remainingMinutes = 0;
-
-console.log("Today's Task Plan");
-
-for (let index = 0; index < taskTitles.length; index += 1) {
-  const marker = completed[index] ? "x" : " ";
-  console.log(`[${marker}] ${taskTitles[index]} (${estimatedMinutes[index]} min)`);
-
-  if (!completed[index]) {
-    openTaskCount += 1;
-    remainingMinutes += estimatedMinutes[index];
-  }
+function statusMarker(completed: boolean): string {
+  return completed ? "x" : " ";
 }
 
-console.log(`Open tasks: ${openTaskCount}`);
-console.log(`Remaining time: ${remainingMinutes} minutes`);
+function remainingMinutes(
+  estimates: number[],
+  completionStatuses: boolean[],
+): number {
+  let total = 0;
+
+  for (let index = 0; index < estimates.length; index += 1) {
+    if (!completionStatuses[index]) {
+      total += estimates[index];
+    }
+  }
+
+  return total;
+}
+
+function formatTask(title: string, minutes: number, completed: boolean): string {
+  return `[${statusMarker(completed)}] ${title} (${minutes} min)`;
+}
+
+function printPlan(
+  titles: string[],
+  estimates: number[],
+  completionStatuses: boolean[],
+): void {
+  console.log("Today's Task Plan");
+
+  for (let index = 0; index < titles.length; index += 1) {
+    console.log(formatTask(titles[index], estimates[index], completionStatuses[index]));
+  }
+
+  console.log(
+    `Remaining time: ${remainingMinutes(estimates, completionStatuses)} minutes`,
+  );
+}
+
+const taskTitles = ["Prepare meeting notes", "Reply to project email", "Review weekly metrics"];
+const estimates = [30, 15, 45];
+const completionStatuses = [false, true, false];
+
+printPlan(taskTitles, estimates, completionStatuses);

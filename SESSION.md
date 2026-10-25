@@ -1,25 +1,15 @@
-# Session 3 Start
+# Session 3 End
 
-## Build today
+## What this branch contains
 
-Reusable functions that format tasks, calculate remaining time, and print the daily plan.
+This is the completed reference implementation for Session 3: the same plan organized into reusable functions.
 
-## Main ideas
+## Review the change
 
-- function declarations and calls
-- parameters and arguments
-- return values
-- input and output types
-- one responsibility per function
+```bash
+npm run check
+npm start
+git diff session-03-start..session-03-end
+```
 
-## Work in small steps
-
-1. Find repeated work in the current plan.
-2. Extract `statusMarker` and `remainingMinutes` functions.
-3. Create `formatTask` to return one display line.
-4. Create `printPlan` to coordinate the report.
-5. Test each function with more than one value.
-
-## Completion checkpoint
-
-The plan produces the same useful output through small functions that can be explained and tested independently.
+Use the diff to discuss how each scaffold comment became working code. Session 4 begins on `session-04-start`.
