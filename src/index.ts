@@ -1,3 +1,18 @@
+// SESSION 7 SCAFFOLD
+// The command loop works. Add checks wherever text enters the application.
+
+// TODO 1: Create parsePositiveNumber(text) and return undefined for bad values.
+
+// TODO 2: Create parsePriority(text) and allow only low, medium, or high.
+
+// TODO 3: Move the add command into addTask() and reject a blank title.
+
+// TODO 4: Validate minutes and priority before calling tracker.addTask.
+
+// TODO 5: Move complete into completeTask() and require a whole-number id.
+
+// TODO 6: Keep the command loop running after every correctable mistake.
+
 import { createInterface } from "node:readline/promises";
 import { stdin as input, stdout as output } from "node:process";
 import { TaskTracker } from "./task-tracker.js";

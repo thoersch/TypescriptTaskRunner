@@ -1,15 +1,25 @@
-# Session 6 End
+# Session 7 Start
 
-## What this branch contains
+## Build today
 
-This is the completed reference implementation for Session 6: an interactive command-line task tracker.
+A resilient interactive application that rejects invalid commands and values with specific, useful messages.
 
-## Review the change
+## Main ideas
 
-```bash
-npm run check
-npm start
-git diff session-06-start..session-06-end
-```
+- validation at input boundaries
+- parsing text into numbers
+- guard clauses
+- optional return values
+- expected errors versus unexpected failures
 
-Use the diff to discuss how each scaffold comment became working code. Session 7 begins on `session-07-start`.
+## Work in small steps
+
+1. Reject blank task titles.
+2. Validate positive time estimates and known priorities.
+3. Handle unknown task identifiers.
+4. Handle unknown commands without exiting.
+5. Test normal, boundary, and unexpected inputs.
+
+## Completion checkpoint
+
+The application remains usable after bad input and explains exactly what the person should correct.
