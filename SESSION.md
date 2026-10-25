@@ -1,15 +1,25 @@
-# Session 3 End
+# Session 4 Start
 
-## What this branch contains
+## Build today
 
-This is the completed reference implementation for Session 3: the same plan organized into reusable functions.
+A typed task model that keeps each task's related information together and supports filtered reports.
 
-## Review the change
+## Main ideas
 
-```bash
-npm run check
-npm start
-git diff session-03-start..session-03-end
-```
+- object properties and dot notation
+- interfaces
+- union types
+- arrays of objects
+- `filter`, `map`, and `reduce`
 
-Use the diff to discuss how each scaffold comment became working code. Session 4 begins on `session-04-start`.
+## Work in small steps
+
+1. Define the shape of one `Task`.
+2. Replace parallel arrays with an array of task objects.
+3. Add identifiers and priorities.
+4. Produce an open-task list and a remaining-time total.
+5. Summarize high-priority work.
+
+## Completion checkpoint
+
+The application uses an interface as the source of truth and produces accurate reports from an array of task objects.

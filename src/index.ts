@@ -1,3 +1,19 @@
+// SESSION 4 SCAFFOLD
+// The functions work, but related task values still live in separate arrays.
+
+// TODO 1: Define a Priority union type with low, medium, and high values.
+
+// TODO 2: Define a Task interface with id, title, estimatedMinutes,
+// completed, and priority properties.
+
+// TODO 3: Replace the three parallel arrays with one Task[] array.
+
+// TODO 4: Use filter to create an openTasks array.
+
+// TODO 5: Use reduce to calculate remaining minutes from openTasks.
+
+// TODO 6: Add a filtered count of open high-priority tasks.
+
 function statusMarker(completed: boolean): string {
   return completed ? "x" : " ";
 }
