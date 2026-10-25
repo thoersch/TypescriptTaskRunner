@@ -1,3 +1,16 @@
+// SESSION 5 SCAFFOLD
+// The object-based report below still runs while the TaskTracker class is built.
+
+// TODO 1: Open task-tracker.ts and complete its TODOs in order.
+
+// TODO 2: Export Task, Priority, and TaskTracker from that module.
+
+// TODO 3: Return here and import the class and Task type.
+
+// TODO 4: Replace the reporting code below with one TaskTracker instance.
+
+// TODO 5: Use class methods to add, complete, list, and summarize tasks.
+
 type Priority = "low" | "medium" | "high";
 
 interface Task {
