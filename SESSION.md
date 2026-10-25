@@ -1,25 +1,15 @@
-# Session 2 Start
+# Session 2 End
 
-## Build today
+## What this branch contains
 
-A daily plan that displays several tasks, marks completed work, and calculates the remaining time.
+This is the completed reference implementation for Session 2: a multi-task daily plan with open-task and time totals.
 
-## Main ideas
+## Review the change
 
-- arrays and zero-based indexes
-- `if` and `else`
-- comparison and boolean expressions
-- `for` loops
-- counters and running totals
+```bash
+npm run check
+npm start
+git diff session-02-start..session-02-end
+```
 
-## Work in small steps
-
-1. Run the one-task summary from Session 1.
-2. Put task titles, estimates, and statuses into arrays.
-3. Loop through the tasks by index.
-4. Display a completion marker for each task.
-5. Count unfinished tasks and total their remaining minutes.
-
-## Completion checkpoint
-
-The program prints a multi-task plan and an accurate summary for normal data and an all-complete plan.
+Use the diff to discuss how each scaffold comment became working code. Session 3 begins on `session-03-start`.

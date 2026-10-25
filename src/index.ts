@@ -1,30 +1,25 @@
-// SESSION 2 SCAFFOLD
-// The Session 1 program still works. Follow the TODOs to make it handle many tasks.
+const taskTitles: string[] = [
+  "Prepare meeting notes",
+  "Reply to project email",
+  "Review weekly metrics",
+];
+const estimatedMinutes: number[] = [30, 15, 45];
+const completed: boolean[] = [false, true, false];
 
-// TODO 1: Replace each single task value with an array of values.
-// Example shape: const taskTitles: string[] = ["First task", "Second task"];
+let openTaskCount = 0;
+let remainingMinutes = 0;
 
-// TODO 2: Create matching arrays for estimates and completion statuses.
+console.log("Today's Task Plan");
 
-// TODO 3: Add a for loop that visits every array position.
+for (let index = 0; index < taskTitles.length; index += 1) {
+  const marker = completed[index] ? "x" : " ";
+  console.log(`[${marker}] ${taskTitles[index]} (${estimatedMinutes[index]} min)`);
 
-// TODO 4: Inside the loop, use a conditional expression to choose "x" or " ".
+  if (!completed[index]) {
+    openTaskCount += 1;
+    remainingMinutes += estimatedMinutes[index];
+  }
+}
 
-// TODO 5: Add openTaskCount and remainingMinutes variables before the loop.
-
-// TODO 6: Update those totals only when the current task is unfinished.
-
-const taskTitle: string = "Prepare meeting notes";
-const priority: string = "high";
-const estimatedMinutes: number = 30;
-let minutesWorked: number = 10;
-let completed: boolean = false;
-
-const minutesRemaining = estimatedMinutes - minutesWorked;
-completed = minutesRemaining === 0;
-
-console.log("TypeScript Task Tracker");
-console.log(`Task: ${taskTitle}`);
-console.log(`Priority: ${priority}`);
-console.log(`Time remaining: ${minutesRemaining} minutes`);
-console.log(`Completed: ${completed}`);
+console.log(`Open tasks: ${openTaskCount}`);
+console.log(`Remaining time: ${remainingMinutes} minutes`);
