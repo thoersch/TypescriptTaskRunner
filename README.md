@@ -4,7 +4,21 @@ This eight-session course teaches programming through one evolving project: a co
 
 ## Before the first session
 
-Install [Node.js](https://nodejs.org/) version 22 or newer and [Visual Studio Code](https://code.visualstudio.com/). Open this folder in VS Code, choose **Terminal > New Terminal**, and run:
+- Install [Node.js](https://nodejs.org/) version 24 or newer
+- Install [Visual Studio Code](https://code.visualstudio.com/)
+- Install Homebrew by running this in a terminal (cmd+space and type in 'terminal'):
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+- Install Git by running this in a new terminal:
+
+```bash
+brew install git
+```
+
+- Open this folder in VS Code, choose **Terminal > New Terminal**, and run:
 
 ```bash
 npm install
@@ -23,7 +37,7 @@ npm start
 | 3       | `session-03-start` | `session-03-end` | Reusable functions for task logic          |
 | 4       | `session-04-start` | `session-04-end` | Typed task objects and useful reports      |
 | 5       | `session-05-start` | `session-05-end` | A `TaskTracker` class and modules          |
-| 6       | `session-06-start` | `session-06-end` | An interactive command-line menu           |
+| 6       | `session-06-start` | `session-06-end` | An interactive commandline menu            |
 | 7       | `session-07-start` | `session-07-end` | Input validation and useful error messages |
 | 8       | `session-08-start` | `session-08-end` | Automatic file persistence with async code |
 
