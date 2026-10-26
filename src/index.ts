@@ -4,7 +4,6 @@ console.log("TypeScript Task Tracker");
 // Complete these TODOs from top to bottom. Run `npm start` after each small step.
 
 // TODO 1: Create a string variable named taskTitle.
-// Example shape: const variableName: string = "some text";
 
 // TODO 2: Create another string for the task's priority.
 
