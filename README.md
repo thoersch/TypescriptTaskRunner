@@ -16,35 +16,18 @@ npm start
 
 ## Course progression
 
-| Session | Start branch | End branch | Feature completed |
-| --- | --- | --- | --- |
-| 1 | `session-01-start` | `session-01-end` | A typed summary for one task |
-| 2 | `session-02-start` | `session-02-end` | A multi-task daily plan with totals |
-| 3 | `session-03-start` | `session-03-end` | Reusable functions for task logic |
-| 4 | `session-04-start` | `session-04-end` | Typed task objects and useful reports |
-| 5 | `session-05-start` | `session-05-end` | A `TaskTracker` class and modules |
-| 6 | `session-06-start` | `session-06-end` | An interactive command-line menu |
-| 7 | `session-07-start` | `session-07-end` | Input validation and useful error messages |
-| 8 | `session-08-start` | `session-08-end` | Automatic file persistence with async code |
+| Session | Start branch       | End branch       | Feature completed                          |
+| ------- | ------------------ | ---------------- | ------------------------------------------ |
+| 1       | `session-01-start` | `session-01-end` | A typed summary for one task               |
+| 2       | `session-02-start` | `session-02-end` | A multi-task daily plan with totals        |
+| 3       | `session-03-start` | `session-03-end` | Reusable functions for task logic          |
+| 4       | `session-04-start` | `session-04-end` | Typed task objects and useful reports      |
+| 5       | `session-05-start` | `session-05-end` | A `TaskTracker` class and modules          |
+| 6       | `session-06-start` | `session-06-end` | An interactive command-line menu           |
+| 7       | `session-07-start` | `session-07-end` | Input validation and useful error messages |
+| 8       | `session-08-start` | `session-08-end` | Automatic file persistence with async code |
 
 `course-complete` and `main` contain the finished persistent task tracker.
-
-## Teaching workflow
-
-Switch to the session's `start` branch, open `SESSION.md`, and search the source files for `TODO`. The comments form a numbered path through the session while the existing program remains runnable.
-
-```bash
-git switch session-05-start
-npm start
-```
-
-When the session is finished, compare the learner's work with the completed branch:
-
-```bash
-git diff session-05-start..session-05-end
-```
-
-To demonstrate the finished version directly, switch to the matching `end` branch. Session N+1 starts from Session N's completed implementation and adds the next layer of scaffold comments.
 
 ## Useful commands
 
