@@ -4,7 +4,21 @@ This eight-session course teaches programming through one evolving project: a co
 
 ## Before the first session
 
-Install [Node.js](https://nodejs.org/) version 22 or newer and [Visual Studio Code](https://code.visualstudio.com/). Open this folder in VS Code, choose **Terminal > New Terminal**, and run:
+- Install [Node.js](https://nodejs.org/) version 24 or newer
+- Install [Visual Studio Code](https://code.visualstudio.com/)
+- Install Homebrew by running this in a terminal (cmd+space and type in 'terminal'):
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+- Install Git by running this in a new terminal:
+
+```bash
+brew install git
+```
+
+- Open this folder in VS Code, choose **Terminal > New Terminal**, and run:
 
 ```bash
 npm install
@@ -16,41 +30,23 @@ npm start
 
 ## Course progression
 
-| Session | Start branch | End branch | Feature completed |
-| --- | --- | --- | --- |
-| 1 | `session-01-start` | `session-01-end` | A typed summary for one task |
-| 2 | `session-02-start` | `session-02-end` | A multi-task daily plan with totals |
-| 3 | `session-03-start` | `session-03-end` | Reusable functions for task logic |
-| 4 | `session-04-start` | `session-04-end` | Typed task objects and useful reports |
-| 5 | `session-05-start` | `session-05-end` | A `TaskTracker` class and modules |
-| 6 | `session-06-start` | `session-06-end` | An interactive command-line menu |
-| 7 | `session-07-start` | `session-07-end` | Input validation and useful error messages |
-| 8 | `session-08-start` | `session-08-end` | Automatic file persistence with async code |
+| Session | Start branch       | End branch       | Feature completed                          |
+| ------- | ------------------ | ---------------- | ------------------------------------------ |
+| 1       | `session-01-start` | `session-01-end` | A typed summary for one task               |
+| 2       | `session-02-start` | `session-02-end` | A multi-task daily plan with totals        |
+| 3       | `session-03-start` | `session-03-end` | Reusable functions for task logic          |
+| 4       | `session-04-start` | `session-04-end` | Typed task objects and useful reports      |
+| 5       | `session-05-start` | `session-05-end` | A `TaskTracker` class and modules          |
+| 6       | `session-06-start` | `session-06-end` | An interactive commandline menu            |
+| 7       | `session-07-start` | `session-07-end` | Input validation and useful error messages |
+| 8       | `session-08-start` | `session-08-end` | Automatic file persistence with async code |
 
 `course-complete` and `main` contain the finished persistent task tracker.
-
-## Teaching workflow
-
-Switch to the session's `start` branch, open `SESSION.md`, and search the source files for `TODO`. The comments form a numbered path through the session while the existing program remains runnable.
-
-```bash
-git switch session-05-start
-npm start
-```
-
-When the session is finished, compare the learner's work with the completed branch:
-
-```bash
-git diff session-05-start..session-05-end
-```
-
-To demonstrate the finished version directly, switch to the matching `end` branch. Session N+1 starts from Session N's completed implementation and adds the next layer of scaffold comments.
 
 ## Useful commands
 
 ```bash
 npm start                 # Run the task tracker
-npm run check             # Ask TypeScript to check the code
 git branch                # Show branches; the current one has an asterisk
 git switch session-03-start
 git restore src           # Discard experiments in the source folder
