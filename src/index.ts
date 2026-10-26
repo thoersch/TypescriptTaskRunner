@@ -2,17 +2,18 @@
 // The Session 1 program still works. Follow the TODOs to make it handle many tasks.
 
 // TODO 1: Replace each single task value with an array of values.
-// Example shape: const taskTitles: string[] = ["First task", "Second task"];
 
 // TODO 2: Create matching arrays for estimates and completion statuses.
 
 // TODO 3: Add a for loop that visits every array position.
 
-// TODO 4: Inside the loop, use a conditional expression to choose "x" or " ".
+// TODO 4: For each task, add some "done" status to a completed task title.
 
-// TODO 5: Add openTaskCount and remainingMinutes variables before the loop.
+// TODO 5: Track total openTaskCount and remainingMinutes metrics.
 
-// TODO 6: Update those totals only when the current task is unfinished.
+// TODO 6: Update complettions to be accurate with time worked vs time estimated.
+
+// TODO 7: Print out All Tasks and Statuses
 
 const taskTitle: string = "Prepare meeting notes";
 const priority: string = "high";
