@@ -1,13 +1,13 @@
 // SESSION 3 SCAFFOLD
 // The plan works. The goal now is to move repeated jobs into named functions.
 
-// TODO 1: Extract the marker decision into statusMarker(completed: boolean).
+// TODO 1: Extract the marker decision into a function that takes a completed argument
 
-// TODO 2: Extract the total calculation into remainingMinutes(...).
+// TODO 2: Extract the total calculation into a functions
 
-// TODO 3: Create formatTask(...) and return one formatted task line.
+// TODO 3: Create a function to format a task and return one formatted task line.
 
-// TODO 4: Create printPlan(...) and move the reporting loop into it.
+// TODO 4: Create a function to print the entire plan and move the reporting loop into it.
 
 // TODO 5: Call each function with a second example and predict its return value.
 
