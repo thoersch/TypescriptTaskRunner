@@ -5,6 +5,8 @@
 
 // TODO 2: Define a Task class with related properties
 
+// TODO 2.5: Add a print tasks behavior to the Task class
+
 // TODO 3: Replace the three parallel arrays with one array of tasks
 
 // TODO 4: Create a function to filter a task array return open tasks
@@ -12,6 +14,10 @@
 // TODO 5: Create a function to calculate remaining minutes from a tasks list
 
 // TODO 6: Create the concept of a "subtask" and update Task to support it
+
+// TODO 7: Update calculate remaining minutes to accommodate subtasks
+
+// TODO 8: Print the tasks list
 
 function statusMarker(completed: boolean): string {
   return completed ? "x" : " ";
